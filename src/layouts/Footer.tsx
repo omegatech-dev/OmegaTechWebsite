@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Logo from '../components/Logo';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -8,8 +9,8 @@ const Footer: React.FC = () => {
     <footer className="bg-[#131313] w-full py-12 px-8 text-white">
       <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8 pt-12">
         <div className="col-span-1 md:col-span-1">
-          <div className="text-lg font-black text-white mb-6 font-headline uppercase leading-none">
-            OmegaTech
+          <div className="mb-6">
+            <Logo tone="on-dark" className="h-auto w-full max-w-[220px]" />
           </div>
           <p className="text-white/60 text-xs leading-relaxed max-w-xs">
             {t('footer.tagline')}

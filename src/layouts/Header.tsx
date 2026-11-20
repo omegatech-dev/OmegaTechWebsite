@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppContext } from '../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../utils/cn';
-import logoOmegaTech from '../assets/logo-omegatech.webp';
+import Logo from '../components/Logo';
 
 interface HeaderProps {
   currentPath: string;
@@ -55,14 +55,19 @@ const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
             onClick={() => handleNavigate('/')}
             className="flex items-center gap-2 cursor-pointer group justify-self-start z-50"
           >
-            <img
-              alt="OmegaTech Logo"
-              width="100"
-              height="36"
-              className="h-8 md:h-9 w-auto transition-all group-hover:scale-110 group-hover:rotate-3"
-              src={logoOmegaTech}
+            <Logo
+              variant="mark"
+              alt="OmegaTech"
+              className="h-9 w-auto transition-all group-hover:scale-110 group-hover:rotate-3 xl:hidden"
             />
-            <span className="text-xl font-black tracking-tighter text-primary font-headline uppercase hidden lg:block">
+            <Logo
+              alt="OmegaTech Logo"
+              className={cn(
+                "hidden w-auto transition-all group-hover:scale-105 xl:block",
+                isScrolled ? "h-5" : "h-6"
+              )}
+            />
+            <span className="hidden text-xl font-black tracking-tighter text-primary font-headline uppercase lg:block xl:hidden">
               OmegaTech
             </span>
           </div>
